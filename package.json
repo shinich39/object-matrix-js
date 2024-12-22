@@ -1,0 +1,32 @@
+{
+  "name": "object-matrix-js",
+  "version": "1.0.0",
+  "description": "Javascript module builder.",
+  "main": "./dist/object-matrix.min.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/object-matrix.min.mjs",
+      "require": "./dist/object-matrix.min.cjs"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "init": "npm install && rimraf .git",
+    "test": "npm run pretty && npm run lint && npm run build && node test/index.js",
+    "build": "node esbuild.config.js",
+    "pretty": "prettier index.js --write --config prettier.config.js",
+    "lint": "eslint index.js",
+    "lint:fix": "eslint index.js --fix"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "shinich39 <shinich39@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.24.2",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1"
+  }
+}
